@@ -36,4 +36,6 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
     testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
     testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_version"
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0-alpha04"
 }
