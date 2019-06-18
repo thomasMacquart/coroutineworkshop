@@ -14,13 +14,18 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        val viewModel = ViewModelProviders.of(this)
+        val viewModel = ViewModelProviders.of(this, MainViewModelFactory(MainRepo()))
                 .get(MainViewModel::class.java)
 
         first_button.setOnClickListener { viewModel.onFirstClicked() }
+        movie_button.setOnClickListener { viewModel.onSecondCLicked() }
 
         viewModel.observable.observe(this, Observer {
             first_result.text = it
+        })
+
+        viewModel.movieObservable.observe(this, Observer {
+            movie_result.text = it
         })
     }
 }
